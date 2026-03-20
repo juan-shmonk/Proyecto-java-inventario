@@ -1,0 +1,11 @@
+=== REPORTE FINAL DE TAREA ===
+ID Tarea: 3
+Titulo: Recibir productos
+Estado: pendiente
+Fecha Entrega: 2026-03-25
+Colaborador: Luis
+Descripcion final:
+Recibir prodcuctos de amstar
+
+--- Materiales registrados en la tarea ---
+Sin registros de materiales.
