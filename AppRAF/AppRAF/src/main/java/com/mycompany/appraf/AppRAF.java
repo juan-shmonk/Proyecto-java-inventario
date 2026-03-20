@@ -1,7 +1,7 @@
 package com.mycompany.appraf;
 /**
  *
- * @author 
+ * @author Juan Miguel Leon Cupul
  */
 public class AppRAF {
     
