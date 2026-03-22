@@ -1,0 +1,11 @@
+=== REPORTE FINAL DE TAREA ===
+ID Tarea: 5
+Titulo: tarea prueba 3
+Estado: terminada
+Fecha Entrega: 2026-03-22
+Colaborador: Ana
+Descripcion final:
+tarea asignada para prueba
+
+--- Materiales registrados en la tarea ---
+Sin registros de materiales.

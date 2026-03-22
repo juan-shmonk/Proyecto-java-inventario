@@ -1,0 +1,11 @@
+=== REPORTE FINAL DE TAREA ===
+ID Tarea: 2
+Titulo: Revisar reporte
+Estado: terminada
+Fecha Entrega: 2026-03-28
+Colaborador: Luis
+Descripcion final:
+Validar informaci?n mensual
+
+--- Materiales registrados en la tarea ---
+Sin registros de materiales.

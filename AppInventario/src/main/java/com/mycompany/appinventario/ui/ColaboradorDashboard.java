@@ -26,6 +26,7 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.JTabbedPane;
 
 public class ColaboradorDashboard extends JFrame {
 
@@ -93,17 +94,9 @@ public class ColaboradorDashboard extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
-        JPanel principal = new JPanel(new BorderLayout(10, 10));
-        principal.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
-
-        principal.add(new JLabel("Mis tareas asignadas"), BorderLayout.NORTH);
-        principal.add(new JScrollPane(tablaTareas), BorderLayout.CENTER);
-
-        JPanel bottom = new JPanel(new GridLayout(1, 2, 10, 10));
-        bottom.add(construirPanelActualizacionTarea());
-        bottom.add(construirPanelMateriales());
-
-        principal.add(bottom, BorderLayout.SOUTH);
+        JTabbedPane pestañas = new JTabbedPane();
+        pestañas.addTab("Mis tareas", construirPestanaTareas());
+        pestañas.addTab("Materiales", construirPanelMateriales());
 
         tablaTareas.getSelectionModel().addListSelectionListener(e -> {
             if (!e.getValueIsAdjusting()) {
@@ -111,7 +104,31 @@ public class ColaboradorDashboard extends JFrame {
             }
         });
 
-        add(principal);
+        add(pestañas);
+    }
+    
+    private JPanel construirPestanaTareas() {
+        JPanel panel = new JPanel(new BorderLayout(10, 10));
+        panel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+
+        JLabel lblTitulo = new JLabel("Mis tareas asignadas");
+        panel.add(lblTitulo, BorderLayout.NORTH);
+
+        JScrollPane scrollTareas = new JScrollPane(tablaTareas);
+        scrollTareas.setBorder(BorderFactory.createTitledBorder("Lista de tareas"));
+
+        JPanel panelIzquierdo = new JPanel(new BorderLayout());
+        panelIzquierdo.add(scrollTareas, BorderLayout.CENTER);
+
+        JPanel panelDerecho = construirPanelActualizacionTarea();
+
+        JPanel contenido = new JPanel(new GridLayout(1, 2, 10, 10));
+        contenido.add(panelIzquierdo);
+        contenido.add(panelDerecho);
+
+        panel.add(contenido, BorderLayout.CENTER);
+
+        return panel;
     }
 
     private JPanel construirPanelActualizacionTarea() {
